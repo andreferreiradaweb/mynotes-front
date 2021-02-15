@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 export const Nav = styled.nav`
   padding: 0 50px;

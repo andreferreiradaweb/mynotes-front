@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import {
   Button,
   ContentForm,
@@ -7,8 +8,8 @@ import {
   FormInput,
   FormTitle,
 } from './styled'
+
 import UserService from '../../services/users'
-import { Redirect } from 'react-router-dom'
 
 const RegisterForm = () => {
   const [name, setName] = useState('')

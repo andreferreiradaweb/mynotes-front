@@ -1,6 +1,4 @@
 import React from 'react'
-import { Button } from '../../elements/button'
-import Layout from '../../layout'
 import {
   BContentBgImage,
   ContentBg,
@@ -11,6 +9,9 @@ import {
   ContentWrapper,
   Image,
 } from './styled'
+
+import { Button } from '../../elements/button'
+import Layout from '../../layout'
 import Bg from '../../../assets/images/wave.svg'
 import Card from '../../../assets/images/card.png'
 
