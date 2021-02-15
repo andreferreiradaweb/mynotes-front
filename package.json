@@ -9,7 +9,7 @@
     "react-icons": "^4.1.0",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^1.1.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -18,7 +18,7 @@
     "husky": "^5.0.9",
     "lint-staged": "^10.5.4",
     "prettier-standard": "^16.4.1",
-    "react-scripts": "4.0.1"
+    "react-scripts": "^4.0.2"
   },
   "scripts": {
     "build": "react-scripts build",
