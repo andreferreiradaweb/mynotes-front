@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import { Bars, Nav, NavBtn, NavLink, NavLogo, NavName } from './styled'
 import { Button } from '../elements/button'

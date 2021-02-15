@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Bars, Nav, NavBtn, NavLink, NavLogo } from './styled'
 import { Button } from '../elements/button'
 import Logo from '../../assets/images/logo-mynotes.png'

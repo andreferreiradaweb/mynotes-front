@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import LayoutLogged from '../../layout_logged'
 import NotesService from '../../../services/notes'

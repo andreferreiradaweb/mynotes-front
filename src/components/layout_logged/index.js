@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { LayoutMain } from './styled'
 import { GlobalStyles } from '../../globalStyles'
 import HeaderLogged from '../header_logged'
