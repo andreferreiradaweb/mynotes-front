@@ -1,19 +1,24 @@
 import RegisterForm from '../../form_register'
 import Layout from '../../layout'
-import * as S from './styled'
+import {
+  BContentBgImage,
+  ContentBg,
+  ContentForm,
+  ContentWrapper,
+} from './styled'
 import Bg from '../../../assets/images/wave-register.svg'
 
 const Register = () => {
   return (
     <Layout>
-      <S.ContentBg>
-        <S.BContentBgImage src={Bg} />
-      </S.ContentBg>
-      <S.ContentWrapper>
-        <S.ContentForm>
+      <ContentBg>
+        <BContentBgImage src={Bg} />
+      </ContentBg>
+      <ContentWrapper>
+        <ContentForm>
           <RegisterForm />
-        </S.ContentForm>
-      </S.ContentWrapper>
+        </ContentForm>
+      </ContentWrapper>
     </Layout>
   )
 }
