@@ -8,7 +8,7 @@ import {
 } from './styled'
 import Bg from '../../../assets/images/wave-register.svg'
 
-const Register = () => {
+export default function RegisterPage () {
   return (
     <Layout>
       <ContentBg>
@@ -22,5 +22,3 @@ const Register = () => {
     </Layout>
   )
 }
-
-export default Register

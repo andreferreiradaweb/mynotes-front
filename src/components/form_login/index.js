@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
+
 import {
   Button,
   ContentForm,
@@ -8,25 +8,10 @@ import {
   FormInput,
   FormTitle,
 } from './styled'
+import useLogin from '../../hooks/login'
 
-import UserService from '../../services/users'
-
-const LoginForm = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [redirectToNotes, setRedirectToNotes] = useState(false)
-  const [error, setError] = useState(false)
-
-  const handleSubmit = async evt => {
-    evt.preventDefault()
-    try {
-      await UserService.login({ email, password })
-      setRedirectToNotes(true)
-    } catch (error) {
-      setError(true)
-      console.log(error)
-    }
-  }
+export default function LoginFormComponent () {
+  const [login, handleChange, handleSubmit, redirectToNotes, error] = useLogin()
 
   if (redirectToNotes) return <Redirect to={{ pathname: '/notes' }} />
 
@@ -34,16 +19,18 @@ const LoginForm = () => {
     <ContentForm onSubmit={handleSubmit}>
       <FormTitle>Faça o login:</FormTitle>
       <FormInput
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
+        name="email"
+        onChange={handleChange}
         placeholder="Digite seu melhor e-mail"
+        type="email"
+        value={login?.email || ''}
       />
       <FormInput
-        type="password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
+        name="password"
+        onChange={handleChange}
         placeholder="Escolha uma senha"
+        type="password"
+        value={login?.password || ''}
       />
       {error && <Error>A problem ocurred, please try again!</Error>}
       <FormBtn>
@@ -54,5 +41,3 @@ const LoginForm = () => {
     </ContentForm>
   )
 }
-
-export default LoginForm

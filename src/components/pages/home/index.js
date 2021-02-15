@@ -9,12 +9,12 @@ import {
   Image,
 } from './styled'
 
-import { Button } from '../../elements/button'
+import Button from '../../elements/Button'
 import Layout from '../../layout'
 import Bg from '../../../assets/images/wave.svg'
 import Card from '../../../assets/images/card.png'
 
-const Home = () => {
+export default function HomePage () {
   return (
     <Layout>
       <ContentBg>
@@ -39,5 +39,3 @@ const Home = () => {
     </Layout>
   )
 }
-
-export default Home

@@ -2,7 +2,7 @@ import LoginForm from '../../form_login'
 import Layout from '../../layout'
 import { BContentBg, ContentBg, ContentForm, ContentWrapper } from './styled'
 
-const Register = () => {
+export default function RegisterPage () {
   return (
     <Layout>
       <ContentBg>
@@ -16,5 +16,3 @@ const Register = () => {
     </Layout>
   )
 }
-
-export default Register

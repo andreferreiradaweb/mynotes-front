@@ -1,5 +1,6 @@
-import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
+
+import useFormRegister from '../../hooks/formRegister'
 import {
   Button,
   ContentForm,
@@ -9,24 +10,8 @@ import {
   FormTitle,
 } from './styled'
 
-import UserService from '../../services/users'
-
-const RegisterForm = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [redirectToLogin, setRedirectToLogin] = useState(false)
-  const [error, setError] = useState(false)
-
-  const handleSubmit = async evt => {
-    evt.preventDefault()
-    try {
-      await UserService.register({ name, email, password })
-      setRedirectToLogin(true)
-    } catch (error) {
-      setError(true)
-    }
-  }
+export default function RegisterFormComponent () {
+  const [formRegister, handleChange, handleSubmit, redirectToLogin, error] = useFormRegister()
 
   if (redirectToLogin) return <Redirect to={{ pathname: '/' }} />
 
@@ -34,22 +19,25 @@ const RegisterForm = () => {
     <ContentForm onSubmit={handleSubmit}>
       <FormTitle>Preencha seus dados abaixo:</FormTitle>
       <FormInput
-        type="name"
-        value={name}
-        onChange={e => setName(e.target.value)}
+        name="name"
+        onChange={handleChange}
         placeholder="Digite seu nome"
+        type="name"
+        value={formRegister?.name || ''}
       />
       <FormInput
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
+        name="email"
+        onChange={handleChange}
         placeholder="Digite seu melhor e-mail"
+        type="email"
+        value={formRegister?.email || ''}
       />
       <FormInput
-        type="password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
+        name="password"
+        onChange={handleChange}
         placeholder="Escolha uma senha"
+        type="password"
+        value={formRegister?.password || ''}
       />
       {error && <Error>A problem ocurred, please try again!</Error>}
       <FormBtn>
@@ -60,5 +48,3 @@ const RegisterForm = () => {
     </ContentForm>
   )
 }
-
-export default RegisterForm
