@@ -7,7 +7,7 @@ const Register = () => {
   return (
     <Layout>
       <S.ContentBg>
-        <S.BContentBgImage src={Bg}/>
+        <S.BContentBgImage src={Bg} />
       </S.ContentBg>
       <S.ContentWrapper>
         <S.ContentForm>

@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <Layout>
       <S.ContentBg>
-        <S.BContentBg/>
+        <S.BContentBg />
       </S.ContentBg>
       <S.ContentWrapper>
         <S.ContentForm>

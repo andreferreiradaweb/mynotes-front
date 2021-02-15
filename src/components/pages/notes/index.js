@@ -3,14 +3,13 @@ import LayoutLogged from '../../layout_logged'
 import NotesService from '../../../services/notes'
 
 const Notes = () => {
-
-  const [ notes, setNotes ] = useState([])
+  const [notes, setNotes] = useState([])
 
   const fetchNotes = async () => {
     const { data } = await NotesService.index()
     setNotes(data)
   }
-  
+
   useEffect(() => {
     fetchNotes()
   }, [])

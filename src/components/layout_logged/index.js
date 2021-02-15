@@ -7,7 +7,7 @@ const Layout = ({ children }) => (
   <>
     <GlobalStyles />
     <HeaderLogged />
-    <S.LayoutMain>{children}</S.LayoutMain>  
+    <S.LayoutMain>{children}</S.LayoutMain>
   </>
 )
 

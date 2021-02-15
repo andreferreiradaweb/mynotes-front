@@ -6,6 +6,5 @@ ReactDOM.render(
   <React.StrictMode>
     <Routes />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 )
-

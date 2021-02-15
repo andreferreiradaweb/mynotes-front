@@ -10,11 +10,11 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route  exact path="/" component={Home}/>
-        <Route  exact path="/register" component={Register}/>
-        <Route  exact path="/login" component={Login}/>
-        <PrivateRoute  exact path="/notes" component={Notes}/>
-        <Route  path="/" component={() => <>Page not found!</>}/>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <PrivateRoute exact path="/notes" component={Notes} />
+        <Route path="/" component={() => <>Page not found!</>} />
       </Switch>
     </BrowserRouter>
   )
