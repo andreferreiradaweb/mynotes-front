@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import LayoutLogged from '../../layout_logged'
+import { FaPencilAlt, FaRegTrashAlt  } from 'react-icons/fa'
 import NotesService from '../../../services/notes'
+import * as S from './styled'
 
 const Notes = () => {
 
@@ -8,7 +10,7 @@ const Notes = () => {
 
   const fetchNotes = async () => {
     const { data } = await NotesService.index()
-    setNotes(data)
+    setNotes(data.reverse())
   }
   
   useEffect(() => {
@@ -17,12 +19,24 @@ const Notes = () => {
 
   return (
     <LayoutLogged>
-      {notes.map(note => (
-        <div key={note._id}>
-          <h1>{note.title}</h1>
-          <p>{note.body}</p>
-        </div>
-      ))}
+      <S.ContentWrapper>
+        <S.Notes>
+        {notes.map(note => (
+          <S.Note key={note._id}>
+            <S.noteHead>
+              <h1>{note.title}</h1>
+            </S.noteHead>
+            <S.noteBody>
+              <p>{note.body}</p>
+            </S.noteBody>
+            <S.noteIcons>
+              <FaPencilAlt />
+              <FaRegTrashAlt />
+            </S.noteIcons>
+          </S.Note>
+        ))}
+        </S.Notes>
+      </S.ContentWrapper>
     </LayoutLogged>
   )
 }

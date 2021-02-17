@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     --blue: #5e75fd;
     --blue-dark: #1c0051;
     --white: #f9f9f9;
+    --gray: #e9e9e9;
     --black: #222222;
     font-family: 'open-sans', sans-serif;
     margin: 0;

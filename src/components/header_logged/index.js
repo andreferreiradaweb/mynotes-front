@@ -30,7 +30,7 @@ const HeaderLogged = () => {
       <S.NavLink to="/"><S.NavLogo src={Logo} /></S.NavLink>
       <S.Bars />
       <S.NavBtn>
-        <S.NavName>Olá, {user ? user.name : ''}</S.NavName> 
+        <S.NavName>Olá, {user?.name || ''}</S.NavName> 
         <Button to="/" onClick={() => logOut()}>Sair</Button>
       </S.NavBtn>
     </S.Nav>
