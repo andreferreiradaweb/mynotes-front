@@ -1,20 +1,18 @@
 import LoginForm from '../../form_login'
 import Layout from '../../layout'
-import * as S from './styled'
+import { BContentBg, ContentBg, ContentForm, ContentWrapper } from './styled'
 
-const Register = () => {
+export default function RegisterPage () {
   return (
     <Layout>
-      <S.ContentBg>
-        <S.BContentBg/>
-      </S.ContentBg>
-      <S.ContentWrapper>
-        <S.ContentForm>
+      <ContentBg>
+        <BContentBg />
+      </ContentBg>
+      <ContentWrapper>
+        <ContentForm>
           <LoginForm />
-        </S.ContentForm>
-      </S.ContentWrapper>
+        </ContentForm>
+      </ContentWrapper>
     </Layout>
   )
 }
-
-export default Register

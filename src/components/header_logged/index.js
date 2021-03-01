@@ -1,44 +1,23 @@
-import React, { useState, useEffect } from "react"
-import * as S from './styled'
-import { Button } from '../elements/button'
+import { Bars, Nav, NavBtn, NavLink, NavLogo, NavName } from './styled'
+import Button from '../elements/Button'
 import Logo from '../../assets/images/logo-mynotes-white.png'
-import UserService from '../../services/users'
+import useUser from '../../hooks/user'
 
-const HeaderLogged = () => {
-
-  const [ user, setUser ] = useState()
-
-  const fetchUser = async () => {
-    try {
-      const data = await UserService.index()
-      setUser(data)
-    } catch (error) {
-      console.log({ error: error })
-    }
-  }
-  
-  useEffect(() => {
-    fetchUser()
-  }, [])
-
-  const logOut = () => {
-    UserService.logout()
-  }
+export default function HeaderLoggedComponent () {
+  const [user, handleLogout] = useUser()
 
   return (
-    <S.Nav>
-      <S.NavLink to="/"><S.NavLogo src={Logo} /></S.NavLink>
-      <S.Bars />
-      <S.NavBtn>
-        <S.NavName>Olá, {user ? user.name : ''}</S.NavName> 
-        <Button to="/" onClick={() => logOut()}>Sair</Button>
-      </S.NavBtn>
-    </S.Nav>
+    <Nav>
+      <NavLink to="/">
+        <NavLogo src={Logo} />
+      </NavLink>
+      <Bars />
+      <NavBtn>
+        <NavName>Olá, {user?.name || ''}</NavName>
+        <Button to="/" onClick={() => handleLogout()}>
+          Sair
+        </Button>
+      </NavBtn>
+    </Nav>
   )
 }
-
-
-
-
-
-export default HeaderLogged

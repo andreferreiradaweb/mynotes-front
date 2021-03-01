@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from 'react'
 import LayoutLogged from '../../layout_logged'
-import NotesService from '../../../services/notes'
+import useNotes from '../../../hooks/notes'
 
-const Notes = () => {
-
-  const [ notes, setNotes ] = useState([])
-
-  const fetchNotes = async () => {
-    const { data } = await NotesService.index()
-    setNotes(data)
-  }
-  
-  useEffect(() => {
-    fetchNotes()
-  }, [])
+export default function NotesPage () {
+  const [notes] = useNotes()
 
   return (
     <LayoutLogged>
@@ -26,5 +15,3 @@ const Notes = () => {
     </LayoutLogged>
   )
 }
-
-export default Notes

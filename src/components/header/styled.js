@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { Link } from "react-router-dom"
 import { FaBars } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 export const Nav = styled.nav`
   padding: 0 50px;
@@ -11,9 +11,9 @@ export const Nav = styled.nav`
   z-index: 9;
   justify-content: space-between;
   position: relative;
-  -webkit-box-shadow: 0px 7px 17px -6px rgba(0,0,0,0.58);
-  -moz-box-shadow: 0px 7px 17px -6px rgba(0,0,0,0.58);
-  box-shadow: 0px 7px 17px -6px rgba(0,0,0,0.58);
+  -webkit-box-shadow: 0px 7px 17px -6px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: 0px 7px 17px -6px rgba(0, 0, 0, 0.58);
+  box-shadow: 0px 7px 17px -6px rgba(0, 0, 0, 0.58);
 `
 
 export const NavLink = styled(Link)`
@@ -23,11 +23,11 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   padding: 10px;
   border-radius: 15px;
-  transition: .5s all;
+  transition: 0.5s all;
   cursor: pointer;
 
   &:hover {
-    transition: .3s all;
+    transition: 0.3s all;
     transform: translateY(-5px);
   }
 `

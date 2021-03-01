@@ -44,7 +44,7 @@ export const ContentTextTitle = styled.h1`
 `
 
 export const ContentTextDesc = styled.p`
-  margin: 10px  0 20px;
+  margin: 10px 0 20px;
   color: var(--font-color);
 `
 
@@ -53,9 +53,8 @@ export const ContentImage = styled.div``
 export const Image = styled.img`
   width: 450px;
   height: auto;
-  -webkit-box-shadow: 0px 7px 17px -6px rgba(0,0,0,0.58);
-  -moz-box-shadow: 0px 7px 17px -6px rgba(0,0,0,0.58);
-  box-shadow: 0px 7px 17px -6px rgba(0,0,0,0.58);
+  -webkit-box-shadow: 0px 7px 17px -6px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: 0px 7px 17px -6px rgba(0, 0, 0, 0.58);
+  box-shadow: 0px 7px 17px -6px rgba(0, 0, 0, 0.58);
   border-radius: 10px;
 `
-

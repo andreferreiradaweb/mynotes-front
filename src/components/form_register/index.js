@@ -1,53 +1,50 @@
-import React, { useState } from 'react'
-import * as S from './styled'
-import UserService from '../../services/users'
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom'
 
-const RegisterForm = () => {
+import useFormRegister from '../../hooks/formRegister'
+import {
+  Button,
+  ContentForm,
+  Error,
+  FormBtn,
+  FormInput,
+  FormTitle,
+} from './styled'
 
-  const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [redirectToLogin, setRedirectToLogin] = useState(false);
-    const [error, setError] = useState(false);
+export default function RegisterFormComponent () {
+  const [formRegister, handleChange, handleSubmit, redirectToLogin, error] = useFormRegister()
 
-    const handleSubmit = async evt => {
-        evt.preventDefault()
-        try {
-            await UserService.register({ name, email, password })
-            setRedirectToLogin(true)
-        } catch (error) {
-            setError(true)
-        }
-    }
-
-    if(redirectToLogin)
-        return <Redirect to={{pathname: "/"}}/>
+  if (redirectToLogin) return <Redirect to={{ pathname: '/' }} />
 
   return (
-    <S.ContentForm onSubmit={handleSubmit}>
-      <S.FormTitle>Preencha seus dados abaixo:</S.FormTitle>
-          <S.FormInput 
-          type="name"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          placeholder="Digite seu nome" />
-          <S.FormInput
-          type="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          placeholder="Digite seu melhor e-mail" />
-          <S.FormInput
-          type="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          placeholder="Escolha uma senha" />
-          { error && <S.Error>A problem ocurred, please try again!</S.Error> }
-          <S.FormBtn>
-            <S.Button primary="true" type="submit">Cadastrar</S.Button>
-          </S.FormBtn>
-    </S.ContentForm>
+    <ContentForm onSubmit={handleSubmit}>
+      <FormTitle>Preencha seus dados abaixo:</FormTitle>
+      <FormInput
+        name="name"
+        onChange={handleChange}
+        placeholder="Digite seu nome"
+        type="name"
+        value={formRegister?.name || ''}
+      />
+      <FormInput
+        name="email"
+        onChange={handleChange}
+        placeholder="Digite seu melhor e-mail"
+        type="email"
+        value={formRegister?.email || ''}
+      />
+      <FormInput
+        name="password"
+        onChange={handleChange}
+        placeholder="Escolha uma senha"
+        type="password"
+        value={formRegister?.password || ''}
+      />
+      {error && <Error>A problem ocurred, please try again!</Error>}
+      <FormBtn>
+        <Button primary="true" type="submit">
+          Cadastrar
+        </Button>
+      </FormBtn>
+    </ContentForm>
   )
 }
-
-export default RegisterForm
