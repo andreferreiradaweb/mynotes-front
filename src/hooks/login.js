@@ -30,5 +30,13 @@ export default function useLogin () {
     }
   }
 
-  return [login, handleChange, handleSubmit, redirectToNotes, error]
+  return {
+    login, 
+    handleChange, 
+    handleSubmit, 
+    redirectToNotes, 
+    error
+  } 
+  
+  // [login, handleChange, handleSubmit, redirectToNotes, error]
 }

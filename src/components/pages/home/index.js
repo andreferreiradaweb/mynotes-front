@@ -15,6 +15,7 @@ import Bg from '../../../assets/images/wave.svg'
 import Card from '../../../assets/images/card.png'
 
 export default function HomePage () {
+
   return (
     <Layout>
       <ContentBg>
