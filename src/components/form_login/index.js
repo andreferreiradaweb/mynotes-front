@@ -11,7 +11,7 @@ import {
 import useLogin from '../../hooks/login'
 
 export default function LoginFormComponent () {
-  const [login, handleChange, handleSubmit, redirectToNotes, error] = useLogin()
+  const { login, handleChange, handleSubmit, redirectToNotes, error } = useLogin()
 
   if (redirectToNotes) return <Redirect to={{ pathname: '/notes' }} />
 

@@ -5,8 +5,10 @@ export const GlobalStyles = createGlobalStyle`
     --font: 'montserrat', sans-serif;
     --text: #78828d;
     --blue: #5e75fd;
+    --gray: #f9f9f9;
     --blue-dark: #1c0051;
     --white: #f9f9f9;
+    --white-default: #fff;
     --black: #222222;
     font-family: 'open-sans', sans-serif;
     margin: 0;

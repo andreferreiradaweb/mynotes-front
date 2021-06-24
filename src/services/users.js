@@ -1,10 +1,10 @@
-import Api from './api'
+import ApiService from './api'
 
 const UserService = {
   index: () => JSON.parse(localStorage.getItem('user')),
-  register: params => Api.post('/users/register', params),
+  register: params => ApiService.post('/users/register', params),
   login: async params => {
-    const { data } = await Api.post('/users/login', params)
+    const { data } = await ApiService.post('/users/login', params)
     localStorage.setItem('user', JSON.stringify(data.user))
     localStorage.setItem('token', data.token)
   },
