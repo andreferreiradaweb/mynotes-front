@@ -1,6 +1,6 @@
 # MyNotes App
 
-<img width="60%" src="https://im3.ezgif.com/tmp/ezgif-3-a20a7b4fe3a3.gif">
+<img width="100%" src="https://im3.ezgif.com/tmp/ezgif-3-a20a7b4fe3a3.gif">
 
 I made this project to practice react and learn more about nodejs, express and API RESTFUL. The project is a
 like Keep(Google), you can create an account and save your notes, it has a simple CRUD functionality.
@@ -12,5 +12,6 @@ like Keep(Google), you can create an account and save your notes, it has a simpl
   - React-router-dom 
 
 
-### Access the project online
-  <a href="https://mynotes-front.netlify.app" target="_blank">https://mynotes-front.netlify.app</a>
+### Links
+  - Online project: <a href="https://mynotes-front.netlify.app" target="_blank">mynotes-front.netlify.app</a>
+  - Backend repositorie: <a href="https://github.com/andreferreiradaweb/mynotes-back" target="_blank">github.com/andreferreiradaweb/mynotes-back</a>
