@@ -38,12 +38,13 @@ export const ModalProvider = ({ children }) => {
   const handleSubmit = async () => {
     try {
       if (modalCreate.id) {
-        console.log('Got into edit mod', modalCreate)
         await NotesService.updateNote(modalCreate.id, {title: modalCreate.title, body: modalCreate.body})
+        setModalCreate(initialModalCreate)
+        handleModalChange()
       } else {
-        console.log('Got into create mod', modalCreate)
         await NotesService.createNote(modalCreate)
         setModalCreate(initialModalCreate)
+        handleModalChange()
       }
     } catch (error) {
       console.log({ error })
