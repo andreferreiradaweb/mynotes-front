@@ -5,7 +5,7 @@ import { useModalContext } from '../../contexts/modal'
 
 export default function Modal({ onClose = () => {}, updateFetch = () => {}}) {
 
-  const { modalCreate, handleChange, handleSubmit, error } = useModalContext()
+  const { modalCreate, handleChange, handleSubmit } = useModalContext()
 
   return (
     <Wrapper>

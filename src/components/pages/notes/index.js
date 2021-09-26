@@ -1,7 +1,6 @@
 import LayoutLogged from '../../layout_logged'
 
 import useNotes from '../../../hooks/notes'
-import useModal from '../../../hooks/modal'
 
 import { FaPencilAlt, FaRegTrashAlt } from 'react-icons/fa'
 

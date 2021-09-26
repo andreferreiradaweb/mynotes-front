@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 import NotesService from '../services/notes'
 
 const ModalContext = createContext({})
@@ -17,7 +17,7 @@ export const ModalProvider = ({ children }) => {
   }
 
   const [modalCreate, setModalCreate] = useState(initialModalCreate)
-  const [error, setError] = useState(false)
+  const [error] = useState(false)
   
   const handleChange = event => {
     event.preventDefault()
