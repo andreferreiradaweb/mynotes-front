@@ -27,9 +27,6 @@
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
-  "engines": {
-    "node": "^14.15.0"
-  },
   "prettier": {
     "jsxSingleQuote": false,
     "trailingComma": "all"
